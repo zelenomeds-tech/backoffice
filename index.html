@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Zeleno</title>
+  <style>
+    :root {
+      --green: #00543d;
+      --green-2: #0b6a4d;
+      --green-soft: #eef7f3;
+      --bg: #f7fbf9;
+      --white: #ffffff;
+      --text: #0f172a;
+      --soft: #64748b;
+      --border: #d9e6df;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+    }
+
+    .login-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #00543d, #003828);
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 460px;
+      background: var(--white);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .kicker {
+      display: inline-block;
+      background: var(--green-soft);
+      color: var(--green);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      color: var(--green);
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--soft);
+      line-height: 1.6;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .botoes {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .atalho {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      background: #fff;
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .atalho:hover {
+      transform: translateY(-2px);
+      border-color: var(--green);
+      box-shadow: 0 12px 30px rgba(0, 84, 61, 0.14);
+    }
+
+    .atalho .ic {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .atalho .ic svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .atalho .txt {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .atalho .titulo {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .atalho .sub {
+      font-size: 12px;
+      color: var(--soft);
+      margin-top: 2px;
+    }
+
+    .atalho .seta {
+      flex: 0 0 auto;
+      color: var(--soft);
+      font-size: 20px;
+    }
+
+    /* Botão sem link definido ainda (T.I) */
+    .atalho.indisponivel {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .atalho.indisponivel:hover {
+      transform: none;
+      border-color: var(--border);
+      box-shadow: none;
+    }
+
+    .atalho.indisponivel .sub {
+      color: #b45309;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-screen">
+    <div class="login-box">
+      <span class="kicker">Zeleno</span>
+      <h1>Painel</h1>
+      <p>Escolha um atalho para abrir.</p>
+
+      <div class="botoes">
+        <a class="atalho" href="https://codigo-descontos.vercel.app/" target="_blank" rel="noopener">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+          </div>
+          <div class="txt">
+            <div class="titulo">Painel de Desconto</div>
+            <div class="sub">codigo-descontos</div>
+          </div>
+          <div class="seta">&rsaquo;</div>
+        </a>
+
+        <a class="atalho" href="https://espiao.zelenostore.com/" target="_blank" rel="noopener">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div class="txt">
+            <div class="titulo">Vendedores</div>
+            <div class="sub">espiao</div>
+          </div>
+          <div class="seta">&rsaquo;</div>
+        </a>
+
+        <a class="atalho" href="https://backdesign.zelenostore.com/" target="_blank" rel="noopener">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          </div>
+          <div class="txt">
+            <div class="titulo">Back Design</div>
+            <div class="sub">backdesign</div>
+          </div>
+          <div class="seta">&rsaquo;</div>
+        </a>
+
+        <!--
+          T.I ainda não tem URL.
+          Quando tiver, troque o "#" abaixo pela URL e
+          apague a palavra  indisponivel  da classe da linha de baixo.
+          Ex: <a class="atalho" href="https://..." target="_blank" rel="noopener">
+        -->
+        <a class="atalho indisponivel" href="https://painel-ti-zeleno.vercel.app/" onclick="return false;">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          </div>
+          <div class="txt">
+            <div class="titulo">T.I</div>
+            <div class="sub">Painel de T.I</div>
+          </div>
+          <div class="seta">&rsaquo;</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
